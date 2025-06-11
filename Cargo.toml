@@ -1,0 +1,59 @@
+[package]
+name = "hyperdrive-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Core async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Web framework
+axum = { version = "0.7", features = ["json", "tower-log"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+
+# Firecracker integration
+firecracker-sdk = "0.1"
+nix = "0.28"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# HTTP client for Firecracker API
+reqwest = { version = "0.11", features = ["json"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# File system operations
+tempfile = "3.0"
+uuid = { version = "1.0", features = ["v4"] }
+
+# Async utilities
+futures = "0.3"
+tokio-util = "0.7"
+
+# Process management
+tokio-process = "0.2"
+
+# Network utilities
+ipnetwork = "0.20"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Configuration
+config = "0.14"
+
+# Metrics and monitoring
+prometheus = "0.13"
+
+# VM pooling and management
+dashmap = "5.0"
+parking_lot = "0.12"
+
+[dev-dependencies]
+tokio-test = "0.4"
